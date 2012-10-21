@@ -1,0 +1,61 @@
+@import url(normalize.css);
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700);
+
+html {
+	margin: 0 auto;
+	max-width: 720px;
+	padding: 40px;
+	background: #f7f7f7;
+	color: #351d18;
+	font: 16px/1.4 'Montserrat Alternates', Arial, serif;
+}
+
+body {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 10px 30px;
+}
+
+a {
+	color: #e74B38;
+	text-decoration: none;
+}
+a:hover {
+	background: #f2f2f2;
+	text-decoration: underline;
+}
+
+header h1 {
+	font-weight: 700;
+	overflow: hidden;
+	padding: 0;
+}
+header h1 span {
+	float: right;
+	font-weight: 400;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style-type: none;
+}
+ul li a {
+	display: block;
+	font-size: 1.4em;
+	padding: 10px 0;
+	text-align: center;
+}
+
+input {
+	border: 5px solid #FFEBDB;
+	color: #e74B38;
+	text-align: center;
+	width: 100%;
+}
+input:focus {
+	border-color: #FFAB66;
+	outline: 0;
+}
