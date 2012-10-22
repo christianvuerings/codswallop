@@ -10,9 +10,16 @@
 	<header>
 		<h1>❊ <a href="../">Codswallop</a> <span>Backbone.js</span></h1>
 	</header>
-	<form>
-		<input placeholder="Preferred name" value="May Bee"/>
-	</form>
-	<footer>Christian Vuerings</footer>
+	<div id="main"><!-- --></div>
+	<script type="text/template" id="user-template">
+		<form>
+			<input placeholder="Preferred name" value="<%- preferredName %>" class="preferredName" />
+		</form>
+	</script>
+	<footer></footer>
+	<script src="js/lodash.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/backbone.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
