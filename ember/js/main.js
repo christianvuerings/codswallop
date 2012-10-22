@@ -1,25 +1,57 @@
 // Ember.js example
+
+/*global Calcentral, console, Em*/
+
+window.Calcentral = Em.Application.create();
+
 (function(){
 
-	/*global console, Em*/
-
 	'use strict';
-
-	var calcentral = calcentral || {};
 
 	///////////
 	// Model //
 	///////////
 
-	calcentral.User = Em.Object.extend({
-		preferedName: 'Slim Shady',
+	Calcentral.User = Em.Object.extend({
+		preferredName: null,
 		what: function() {
 			// We shouldn't use this.preferredName here, use getters/setters instead
-			console.log('My name is ' + this.get('preferedName'));
-		}
+			console.log('My name is - ' + this.get('preferredName'));
+		},
+		nameChanged: function() {
+			console.log('The name changed to - ' + this.get('preferredName'));
+		}.observes('preferredName')
 	});
 
-	var jan = calcentral.User.create();
-	jan.what();
+	var slimShady = Calcentral.User.create({
+		preferredName: 'Slim Shady'
+	});
+	slimShady.what();
+
+	// Change the preferredName
+	slimShady.set('preferredName', 'The real Slim Shady');
+
+
+	////////////////
+	// Controller //
+	////////////////
+
+	Calcentral.userController = Em.Object.create({
+		user: slimShady
+	});
+
+	//////////
+	// View //
+	//////////
+
+	Calcentral.UserText = Em.TextField.extend({
+		formBlurredBinding: 'Calcentral.userController.formBlurred'
+	});
+
+	Calcentral.UserView = Em.View.create({
+		templateName: 'template-user',
+		preferredNameBinding: 'Calcentral.userController.user.preferredName'
+	});
+	Calcentral.UserView.append();
 
 })();

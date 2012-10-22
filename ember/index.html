@@ -11,10 +11,13 @@
 		<h1>❊ <a href="../">Codswallop</a> <span>Ember.js</span></h1>
 	</header>
 	<div id="main"><!-- --></div>
-	<script type="text/x-handlebars" id="user-template">
+	<script type="text/x-handlebars" data-template-name="template-user">
 		<form>
-			<input placeholder="Preferred name" value="{{calcentral.User.preferredName}}" class="preferredName" />
+			{{view Calcentral.UserText placeholder="Preferred name" name="preferredName" class="preferredName" valueBinding="Calcentral.userController.user.preferredName"}}
 		</form>
+		<p>
+			{{preferredName}}
+		</p>
 	</script>
 	<footer></footer>
 	<script src="js/jquery.js"></script>
