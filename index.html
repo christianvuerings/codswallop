@@ -10,10 +10,32 @@
 	<header>
 		<h1>❊ Codswallop <span>Overview</span></h1>
 	</header>
+	<h2>Christian</h2>
 	<ul>
+		<li><a href="angular/">Angular.js</a></li>
 		<li><a href="backbone/">Backbone.js</a></li>
 		<li><a href="ember/">Ember.js</a></li>
-		<li><a href="angular/">Angular.js</a></li>
 	</ul>
+	<hr />
+	<h2>Yu-Hung</h2>
+	<ul>
+		<li><a href="angular-require/">Angular.js + Require</a></li>
+	</ul>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>
+		var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+		$(document).keydown(function(e) {
+			kkeys.push(e.keyCode);
+			if (kkeys.toString().indexOf( konami ) >= 0){
+				$('body').append('<iframe width="640" height="360" src="http://www.youtube.com/embed/9bZkp7q19f0?autoplay=1" frameborder="0" allowfullscreen></iframe>')
+				$(document).unbind('keydown',arguments.callee);
+				$.getScript('//www.cornify.com/js/cornify.js', function(){
+					cornify_add();
+					$(document).keydown(cornify_add);
+				});
+			}
+		});
+	</script>
 </body>
 </html>
